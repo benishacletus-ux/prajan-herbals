@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Noni Juice | Prajan Herbals</title>
+<meta name="description" content="Nature's goodness in every sip.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1f5a3d; --green-dark:#154530; --leaf:#4f8a5b; --cream:#faf8f1; --sand:#f1ede0;
+  --ink:#1d2a22; --muted:#6b7a70; --line:#e3e0d2; --wa:#25d366;
+  --gold:#a8861f; --gold-dark:#8b6f1f; --gold-light:#c9a227;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Poppins','Segoe UI',system-ui,sans-serif;
+  --radius:18px; --shadow:0 12px 34px rgba(31,90,61,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;overflow-x:hidden}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:0 auto}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+
+.card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:0 12px 34px rgba(0,0,0,.12);
+}
+
+/* ============ HEADER ============ */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,248,241,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;position:relative}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--green)}
+.logo img{height:42px;width:auto}
+.logo .fallback{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:var(--green);color:#fff;font-size:1rem}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links > li{position:relative}
+.nav-links a.link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;font-size:.92rem;font-weight:500;transition:.25s}
+.nav-links a.link:hover{background:var(--sand)}
+.nav-links a.link.active{background:var(--green);color:#fff}
+.dropdown{position:absolute;top:100%;left:0;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s;list-style:none}
+.has-drop:hover .dropdown,.has-drop:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
+.dropdown a{display:block;padding:9px 14px;border-radius:10px;font-size:.9rem}
+.dropdown a:hover{background:var(--sand);color:var(--green)}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;color:var(--green);cursor:pointer}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:999px;font-weight:600;font-size:.95rem;border:1.5px solid var(--green);cursor:pointer;transition:.25s;font-family:var(--sans)}
+.btn svg{width:17px;height:17px;fill:currentColor;flex:none}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-outline{background:#fff;color:var(--green)}
+.btn-outline:hover{background:var(--green);color:#fff}
+
+section{padding:90px 0}
+
+/* ============ REUSABLE SECTION HEADING ============ */
+.section-head{
+  text-align:center;
+  max-width:680px;
+  margin:0 auto 48px;
+  position:relative;
+  padding-bottom:26px;
+}
+.section-head::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:70px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  border-radius:2px;
+}
+.section-head .eyebrow{
+  display:inline-block;
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:14px;
+}
+.section-head h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.6vw,2.8rem);
+  line-height:1.15;
+  color:var(--green-dark);
+  font-weight:600;
+}
+.section-head p{
+  color:var(--muted);
+  font-size:.95rem;
+  margin-top:12px;
+  line-height:1.65;
+}
+
+/* ============ PRODUCT HERO ============ */
+.hero-product{padding:100px 0 60px;position:relative}
+.hero-product .hero-card{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:48px 52px;
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
+  position:relative;
+  overflow:hidden;
+}
+.hero-product .hero-card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--leaf),var(--green-dark),var(--gold));
+}
+.hero-product .detail{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:56px;
+  align-items:center;
+}
+.hero-product .detail .hero-img{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:linear-gradient(160deg,#dfead3,#f3efdc);
+  aspect-ratio:1/1;
+  box-shadow:0 14px 36px rgba(0,0,0,.14);
+  width:100%;
+}
+.hero-product .detail .hero-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+}
+.hero-product .detail h1{
+  font-family:var(--serif);
+  font-size:clamp(2.8rem,5.5vw,4.2rem);
+  color:var(--green-dark);
+  line-height:1.02;
+  margin-bottom:10px;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+.hero-product .detail .tag{
+  color:var(--gold-dark);
+  font-weight:600;
+  letter-spacing:.18em;
+  font-size:.78rem;
+  display:inline-block;
+  margin-bottom:22px;
+  position:relative;
+  padding-left:34px;
+}
+.hero-product .detail .tag::before{
+  content:"";
+  position:absolute;
+  left:0;top:50%;
+  width:24px;height:1.5px;
+  background:var(--gold);
+  transform:translateY(-50%);
+}
+.hero-product .detail .chips{margin:20px 0 26px}
+.hero-product .detail .chip{
+  display:inline-flex;gap:6px;align-items:center;
+  background:var(--sand);
+  border:1px solid var(--line);
+  padding:8px 18px;border-radius:999px;
+  font-size:.8rem;color:var(--green-dark);font-weight:500;
+}
+.hero-product .detail p{
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.7;
+  margin-bottom:30px;
+  max-width:520px;
+}
+
+/* ============ PRICING ============ */
+.pricing{padding:20px 0 60px}
+.pricing .pricing-card{padding:52px 48px;}
+.price-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:26px;
+  max-width:820px;margin:0 auto;
+}
+.price-card{
+  border-radius:16px;padding:34px 30px 30px;text-align:center;
+  position:relative;overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12);}
+.price-card.retail{
+  background:linear-gradient(180deg,#f4f8ec 0%,#e9f1de 100%);
+  border:1.5px solid rgba(31,90,61,.15);
+}
+.price-card.retail::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--leaf),var(--green-dark));
+}
+.price-card.wholesale{
+  background:linear-gradient(180deg,#fdf8ea 0%,#f7efd6 100%);
+  border:1.5px solid rgba(168,134,31,.20);
+}
+.price-card.wholesale::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#c9a227,var(--gold-dark));
+}
+.price-card .pc-badge{
+  position:absolute;top:16px;right:16px;
+  font-size:.6rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;padding:5px 12px;border-radius:999px;
+}
+.price-card.retail .pc-badge{background:var(--green);color:#fff;}
+.price-card.wholesale .pc-badge{background:var(--gold-dark);color:#fff;}
+.pc-icon{
+  width:58px;height:58px;border-radius:16px;
+  display:grid;place-items:center;margin:0 auto 18px;
+}
+.price-card.retail .pc-icon{background:rgba(79,138,91,.15);}
+.price-card.wholesale .pc-icon{background:rgba(168,134,31,.15);}
+.pc-icon svg{
+  width:28px;height:28px;stroke-width:1.9;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.price-card.retail .pc-icon svg{stroke:var(--green-dark);}
+.price-card.wholesale .pc-icon svg{stroke:var(--gold-dark);}
+.price-card h3{
+  font-family:var(--serif);font-size:1.75rem;color:var(--green-dark);
+  line-height:1.1;margin-bottom:4px;font-weight:600;
+}
+.price-card.wholesale h3{color:var(--gold-dark);}
+.price-card .sub{
+  display:block;font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:22px;
+}
+.pc-price{
+  display:flex;align-items:baseline;justify-content:center;
+  gap:6px;margin-bottom:10px;
+}
+.pc-price .currency{
+  font-family:var(--serif);font-size:1.6rem;font-weight:700;
+  color:var(--green-dark);line-height:1;
+}
+.price-card.wholesale .pc-price .currency{color:var(--gold-dark);}
+.pc-price .amount{
+  font-family:var(--serif);font-size:2.8rem;font-weight:700;
+  color:var(--green-dark);line-height:1;letter-spacing:-.02em;
+}
+.price-card.wholesale .pc-price .amount{color:var(--gold-dark);}
+.pc-price .unit{font-size:.82rem;color:var(--muted);font-weight:500;}
+.pc-note{font-size:.78rem;color:var(--muted);margin-bottom:22px;min-height:20px;}
+.pc-note strong{color:var(--ink);font-weight:600;}
+.pc-list{
+  list-style:none;display:grid;gap:9px;text-align:left;
+  margin:0 0 24px;padding-top:22px;border-top:1px dashed rgba(0,0,0,.08);
+}
+.pc-list li{
+  display:flex;gap:9px;align-items:flex-start;
+  font-size:.83rem;color:var(--ink);line-height:1.5;
+}
+.pc-list li svg{
+  width:14px;height:14px;flex:none;margin-top:3px;
+  stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+.price-card.retail .pc-list li svg{stroke:var(--green-dark);}
+.price-card.wholesale .pc-list li svg{stroke:var(--gold-dark);}
+.price-card .btn{width:100%;justify-content:center;font-size:.88rem;padding:12px 20px;}
+.price-card.wholesale .btn-primary{
+  background:var(--gold-dark);border-color:var(--gold-dark);color:#fff;
+}
+.price-card.wholesale .btn-primary:hover{background:#6f5817;border-color:#6f5817;}
+.pricing-foot{
+  text-align:center;font-size:.82rem;color:var(--muted);
+  margin-top:28px;line-height:1.65;
+}
+.pricing-foot a{
+  color:var(--green);font-weight:600;
+  border-bottom:1px solid rgba(31,90,61,.3);
+}
+.pricing-foot a:hover{color:var(--green-dark);}
+
+/* ============ PRODUCT DETAILS ============ */
+.pd{padding:60px 0 80px}
+.pd .card{padding:40px 38px;margin-bottom:28px;}
+.pd .card.two{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;}
+.pd .card h3{
+  font-family:var(--serif);
+  font-size:1.85rem;
+  margin-bottom:18px;
+  color:var(--green-dark);
+  font-weight:600;
+  line-height:1.2;
+}
+.pd .card p{color:var(--muted);font-size:.97rem;line-height:1.75}
+.hl-list{list-style:none;display:grid;gap:16px}
+.hl-list li{display:flex;align-items:center;gap:14px;font-size:.95rem;font-weight:500;color:var(--ink)}
+.hl-ico{width:36px;height:36px;border-radius:50%;background:#dcebd6;display:grid;place-items:center;flex:none;transition:.3s}
+.hl-list li:hover .hl-ico{background:var(--leaf);transform:scale(1.08)}
+.hl-list li:hover .hl-ico svg{stroke:#fff}
+.hl-ico svg{width:18px;height:18px;stroke:var(--green-dark);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:.3s}
+.thumbs{display:flex;gap:12px;flex-wrap:wrap}
+.thumbs img{width:96px;height:82px;object-fit:cover;border-radius:10px;background:var(--sand);cursor:zoom-in;transition:.3s;border:1px solid var(--line)}
+.thumbs img:hover{transform:scale(1.06);border-color:var(--leaf)}
+.consume{
+  display:flex;gap:16px;align-items:center;
+  background:var(--sand);border-radius:14px;padding:22px 24px;
+  border:1px solid var(--line);
+}
+.consume .ico{width:48px;height:48px;display:grid;place-items:center;flex:none;background:#fff;border-radius:50%}
+.consume .ico svg{width:28px;height:28px;fill:var(--green-dark)}
+.consume strong{display:block;font-weight:600;font-size:.96rem;color:var(--ink)}
+.consume span{font-size:.82rem;color:var(--muted);line-height:1.5;display:block;margin-top:2px}
+
+/* ============ INGREDIENTS BLOCK ============ */
+.ing-block{
+  background:linear-gradient(180deg,#fdf9ec 0%,#f8f2dc 100%);
+  border:1px solid rgba(168,134,31,.22);
+  border-radius:14px;
+  padding:22px 24px;
+  margin-bottom:20px;
+  position:relative;
+  overflow:hidden;
+}
+.ing-block::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;bottom:0;
+  width:4px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-dark));
+}
+.ing-block h4{
+  font-family:var(--serif);
+  font-size:1.25rem;
+  color:var(--gold-dark);
+  margin-bottom:12px;
+  font-weight:600;
+  letter-spacing:.005em;
+}
+.ing-block .ing-en{
+  font-size:.94rem;
+  color:var(--ink);
+  line-height:1.7;
+}
+.ing-block .ing-en strong{color:var(--green-dark);font-weight:600;}
+.ing-block .ing-label{
+  display:inline-block;
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  background:rgba(168,134,31,.12);
+  padding:3px 10px;
+  border-radius:999px;
+  margin-bottom:10px;
+}
+.ingredients-sub{
+  font-size:.82rem;
+  color:var(--muted);
+  margin-bottom:16px;
+  line-height:1.6;
+}
+
+/* ========================================================= */
+/* ============ PROFESSIONAL PRODUCT GALLERY ============== */
+/* ========================================================= */
+.pd-gallery{
+  padding:60px 48px 52px;
+  background:linear-gradient(180deg,#ffffff 0%,#fafaf6 100%);
+  position:relative;
+  overflow:hidden;
+}
+.pd-gallery::before{
+  content:"";
+  position:absolute;
+  top:0;left:50%;
+  transform:translateX(-50%);
+  width:80px;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  border-radius:3px;
+}
+
+.gallery-head{
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 44px;
+  padding-bottom:28px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+.gallery-head::after{
+  content:"";
+  position:absolute;
+  bottom:-1px;left:50%;
+  transform:translateX(-50%);
+  width:80px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.gallery-head .eyebrow{
+  display:inline-block;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:12px;
+}
+.gallery-head h3{
+  font-family:var(--serif);
+  font-size:2.3rem;
+  line-height:1.15;
+  color:var(--green-dark);
+  margin:0 0 10px;
+  font-weight:600;
+  letter-spacing:-.005em;
+}
+.gallery-head .gh-note{
+  font-size:.85rem;
+  color:var(--muted);
+  letter-spacing:.04em;
+  font-style:italic;
+  font-family:var(--serif);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-auto-rows:220px;
+  gap:18px;
+}
+
+.g-tile{
+  position:relative;
+  margin:0;
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--sand);
+  cursor:zoom-in;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  transition:transform .55s cubic-bezier(.2,.8,.2,1),
+             box-shadow .55s cubic-bezier(.2,.8,.2,1);
+  isolation:isolate;
+}
+
+.g-tile.g-feature{
+  grid-column:span 2;
+  grid-row:span 2;
+  border-radius:18px;
+  box-shadow:0 12px 34px rgba(0,0,0,.10);
+}
+.g-tile.g-wide{
+  grid-column:span 2;
+  grid-row:span 1;
+}
+.g-tile.g-std{
+  grid-column:span 1;
+  grid-row:span 1;
+}
+
+.g-tile::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    rgba(0,0,0,0) 45%,
+    rgba(21,69,48,.55) 100%);
+  opacity:0;
+  transition:opacity .45s ease;
+  pointer-events:none;
+  z-index:1;
+}
+.g-tile:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 52px rgba(31,90,61,.24);
+}
+.g-tile:hover::after{opacity:1}
+
+.g-tile img,
+.g-tile video{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform 1s cubic-bezier(.2,.8,.2,1);
+  display:block;
+}
+.g-tile.g-feature img,
+.g-tile.g-feature video{
+  transition:transform 1.3s cubic-bezier(.2,.8,.2,1);
+}
+.g-tile:hover img,
+.g-tile:hover video{transform:scale(1.06)}
+
+.g-tile .g-num{
+  position:absolute;
+  top:16px;left:16px;
+  z-index:2;
+  font-family:var(--serif);
+  font-size:.8rem;
+  font-weight:600;
+  color:#fff;
+  letter-spacing:.08em;
+  opacity:.9;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
+  pointer-events:none;
+}
+.g-tile .g-num::after{
+  content:"";
+  display:block;
+  width:20px;height:1px;
+  background:rgba(255,255,255,.7);
+  margin-top:4px;
+}
+
+.g-tile .g-cap{
+  position:absolute;
+  left:18px;bottom:16px;
+  z-index:2;
+  color:#fff;
+  font-family:var(--serif);
+  font-size:1rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .4s ease, transform .4s ease;
+  text-shadow:0 2px 10px rgba(0,0,0,.7);
+}
+.g-tile:hover .g-cap{opacity:1;transform:none}
+
+.g-tile .g-sub{
+  position:absolute;
+  left:18px;bottom:34px;
+  z-index:2;
+  color:rgba(255,255,255,.78);
+  font-size:.66rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:600;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .4s ease .05s, transform .4s ease .05s;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
+}
+.g-tile:hover .g-sub{opacity:1;transform:none}
+
+.g-tile .g-ring{
+  position:absolute;
+  top:16px;right:16px;
+  z-index:2;
+  width:32px;height:32px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.85);
+  display:grid;place-items:center;
+  opacity:0;
+  transform:scale(.75);
+  transition:opacity .35s ease, transform .35s ease;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(4px);
+}
+.g-tile:hover .g-ring{opacity:1;transform:scale(1)}
+.g-tile .g-ring svg{
+  width:14px;height:14px;
+  fill:none;
+  stroke:#fff;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.g-video{
+  cursor:pointer;
+  background:#1d2a22;
+}
+.g-video video{background:#1d2a22;}
+.g-video::before{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,
+    rgba(0,0,0,.05) 0%,
+    rgba(0,0,0,.5) 100%);
+  z-index:1;
+  pointer-events:none;
+  transition:opacity .45s ease;
+}
+.g-video:hover::before{opacity:.65}
+
+.g-video .play{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:76px;height:76px;
+  border-radius:50%;
+  background:rgba(255,255,255,.96);
+  display:grid;place-items:center;
+  z-index:3;
+  pointer-events:none;
+  box-shadow:0 12px 36px rgba(0,0,0,.55);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),
+             box-shadow .5s ease,
+             background .35s ease;
+}
+.g-video .play::after{
+  content:"";
+  position:absolute;inset:-10px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.6);
+  opacity:.7;
+  transition:opacity .35s ease, inset .5s ease;
+}
+.g-video:hover .play{
+  transform:translate(-50%,-50%) scale(1.1);
+  background:#fff;
+  box-shadow:0 16px 44px rgba(0,0,0,.65);
+}
+.g-video:hover .play::after{inset:-16px;opacity:.9}
+.g-video .play svg{
+  width:28px;height:28px;
+  fill:var(--green-dark);
+  margin-left:5px;
+}
+
+.g-video .vlabel{
+  position:absolute;
+  top:16px;right:16px;
+  z-index:3;
+  background:rgba(168,134,31,.92);
+  backdrop-filter:blur(4px);
+  color:#fff;
+  font-size:.58rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  padding:6px 13px 5px;
+  border-radius:999px;
+  font-weight:700;
+  pointer-events:none;
+  box-shadow:0 4px 14px rgba(139,111,31,.45);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.g-video .vlabel::before{
+  content:"";
+  width:5px;height:5px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 8px rgba(255,255,255,.9);
+}
+
+/* ============ ENQUIRY ============ */
+.enquiry{padding:60px 0 90px;text-align:center}
+.enquiry .card{padding:56px 44px;max-width:820px;margin:0 auto;position:relative;overflow:hidden}
+.enquiry .card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--leaf),var(--green-dark),var(--gold));
+}
+.enquiry h2{
+  font-family:var(--serif);
+  font-size:clamp(1.9rem,3.6vw,2.5rem);
+  color:var(--green-dark);
+  line-height:1.2;
+  font-weight:600;
+}
+.enquiry p{color:var(--muted);margin:10px 0 26px}
+.enq-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ============ LIGHTBOX ============ */
+.lightbox{
+  position:fixed;inset:0;
+  background:rgba(10,20,14,.96);
+  backdrop-filter:blur(8px);
+  display:none;
+  place-items:center;
+  z-index:100;
+  padding:20px;
+  opacity:0;
+  transition:opacity .35s ease;
+  overflow:hidden;
+}
+.lightbox.open{display:grid;opacity:1}
+.lightbox img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:94vw;
+  max-height:90vh;
+  border-radius:12px;
+  box-shadow:0 30px 80px rgba(0,0,0,.75),
+             0 0 0 1px rgba(255,255,255,.08);
+  animation:lbIn .4s cubic-bezier(.2,.8,.2,1);
+  object-fit:contain;
+}
+.lightbox video{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:94vw;
+  max-height:90vh;
+  border-radius:12px;
+  background:#000;
+  box-shadow:0 30px 80px rgba(0,0,0,.75);
+  animation:lbIn .4s cubic-bezier(.2,.8,.2,1);
+  outline:none;
+}
+@keyframes lbIn{
+  from{opacity:0;transform:scale(.94)}
+  to{opacity:1;transform:scale(1)}
+}
+.lightbox button{
+  position:absolute;top:20px;right:26px;
+  width:46px;height:46px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  color:#fff;
+  font-size:1.5rem;
+  line-height:1;
+  cursor:pointer;
+  display:grid;place-items:center;
+  transition:background .3s ease, transform .3s ease;
+  padding:0;
+  z-index:2;
+}
+.lightbox button:hover{
+  background:rgba(255,255,255,.22);
+  transform:rotate(90deg);
+}
+.lightbox img[hidden],
+.lightbox video[hidden]{display:none!important}
+
+/* ============ FOOTER ============ */
+.site-footer{
+  background:linear-gradient(180deg,#154530 0%,#0e2b1f 100%);
+  color:#c9d9d0;padding:70px 0 0;position:relative;overflow:hidden;
+}
+.site-footer::before{
+  content:"";position:absolute;width:520px;height:520px;
+  top:-260px;right:-180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,138,91,.22),transparent 70%);
+  pointer-events:none;
+}
+.site-footer::after{
+  content:"";position:absolute;width:420px;height:420px;
+  bottom:-220px;left:-160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,211,102,.12),transparent 70%);
+  pointer-events:none;
+}
+.site-footer .container{position:relative;z-index:2}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:48px;}
+.foot-brand .logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--serif);font-size:1.55rem;font-weight:700;
+  color:#fff;margin-bottom:16px;background:none;border:none;padding:0;
+}
+.foot-brand .logo img{height:44px;width:auto;background:none;border:none;border-radius:0;padding:0;box-shadow:none;}
+.foot-brand .logo .fallback{display:grid;place-items:center;width:44px;height:44px;border-radius:0;background:none;color:#fff;font-size:1rem;border:none;box-shadow:none;}
+.foot-brand p{color:#b3c7bc;font-size:.92rem;max-width:340px;margin-bottom:20px;line-height:1.7;}
+.foot-social{display:flex;gap:10px;flex-wrap:wrap}
+.foot-social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;transition:.3s;}
+.foot-social a:hover{background:var(--green);border-color:var(--green);transform:translateY(-3px);box-shadow:0 8px 20px rgba(31,90,61,.4);}
+.foot-social svg{width:18px;height:18px;fill:#dce9e0;transition:fill .3s}
+.foot-social a:hover svg{fill:#fff}
+.site-footer h4{font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:20px;position:relative;padding-bottom:10px;}
+.site-footer h4::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:2px;background:var(--leaf);border-radius:2px;}
+.site-footer ul{list-style:none;display:grid;gap:10px}
+.site-footer li a{color:#b3c7bc;font-size:.92rem;display:inline-flex;align-items:center;gap:8px;transition:.25s;}
+.site-footer li a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--leaf);opacity:.5;transition:.25s;flex:none;}
+.site-footer li a:hover{color:#fff;transform:translateX(3px)}
+.site-footer li a:hover::before{background:#25d366;opacity:1;box-shadow:0 0 8px rgba(37,211,102,.8);}
+.foot-contact li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.9rem;color:#b3c7bc;line-height:1.6;}
+.foot-contact li svg{width:18px;height:18px;fill:var(--leaf);flex:none;margin-top:4px}
+.foot-contact li a{color:#b3c7bc;display:inline;gap:0}
+.foot-contact li a::before{content:none}
+.foot-contact li a:hover{color:#fff;transform:none;text-decoration:underline}
+.foot-contact strong{color:#fff;font-weight:600;display:block;margin-bottom:2px;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.82rem;color:#9eb3a8;}
+.foot-bottom .legal-links{display:flex;gap:22px;flex-wrap:wrap;list-style:none}
+.foot-bottom .legal-links li a{color:#9eb3a8;font-size:.82rem;display:inline;gap:0}
+.foot-bottom .legal-links li a::before{content:none}
+.foot-bottom .legal-links li a:hover{color:#fff;text-decoration:underline;transform:none}
+
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 26px rgba(37,211,102,.45);transition:.3s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  section{padding:70px 0}
+  .section-head{margin-bottom:36px}
+  .hero-product{padding:70px 0 40px}
+  .hero-product .hero-card{padding:32px 26px}
+  .hero-product .detail{grid-template-columns:1fr;gap:28px}
+  .hero-product .detail .hero-img{max-width:520px;margin:0 auto;width:100%}
+  .hero-product .detail h1{text-align:center;font-size:2.6rem}
+  .hero-product .detail .tag{text-align:center;display:block;margin-left:auto;margin-right:auto}
+  .hero-product .detail .chips{justify-content:center;display:flex;flex-wrap:wrap;gap:6px}
+  .hero-product .detail p{text-align:center;margin-left:auto;margin-right:auto}
+  .hero-product .detail .btn{display:flex;justify-content:center;margin:0 auto;max-width:320px;width:100%}
+
+  .pricing{padding:10px 0 40px}
+  .pricing .pricing-card{padding:34px 26px}
+  .price-grid{grid-template-columns:1fr;max-width:500px;gap:20px}
+
+  .pd{padding:50px 0 60px}
+  .pd .card{padding:32px 28px;margin-bottom:22px}
+  .pd .card.two{grid-template-columns:1fr;gap:28px}
+  .pd .card h3{font-size:1.6rem}
+
+  .pd-gallery{padding:44px 28px 40px}
+  .gallery-head{margin-bottom:32px;padding-bottom:22px}
+  .gallery-head h3{font-size:1.8rem}
+  .gallery-grid{
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:160px;
+    gap:14px;
+  }
+  .g-tile.g-feature{grid-column:span 4;grid-row:span 1;border-radius:16px}
+  .g-tile.g-wide{grid-column:span 2}
+  .g-tile.g-std{grid-column:span 1}
+
+  .enquiry{padding:50px 0 70px}
+  .enquiry .card{padding:44px 32px}
+
+  .menu-btn{display:block}
+  .nav-links{
+    position:absolute;top:74px;left:-4%;right:-4%;
+    background:var(--cream);flex-direction:column;align-items:stretch;
+    padding:14px 4%;border-bottom:1px solid var(--line);display:none;
+  }
+  .nav-links.open{display:flex}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 14px;display:none}
+  .has-drop.open .dropdown{display:block}
+
+  .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .foot-bottom{flex-direction:column;text-align:center}
+}
+
+@media (max-width:600px){
+  section{padding:50px 0}
+  .container{width:min(1180px,94%)}
+  .nav{height:64px}
+  .logo{font-size:1.25rem;gap:8px}
+  .logo img{height:34px}
+  .logo .fallback{width:34px;height:34px;font-size:.85rem}
+  .menu-btn{font-size:1.5rem}
+
+  .section-head h2{font-size:1.6rem}
+  .section-head p{font-size:.88rem}
+
+  .hero-product{padding:30px 0 20px}
+  .hero-product .hero-card{padding:22px 18px;border-radius:16px}
+  .hero-product .detail{grid-template-columns:1fr;gap:22px}
+  .hero-product .detail .hero-img{max-width:100%;width:100%;margin:0 auto;aspect-ratio:1/1;border-radius:14px;}
+  .hero-product .detail h1{font-size:2rem;text-align:center;margin-bottom:6px}
+  .hero-product .detail .tag{font-size:.72rem;letter-spacing:.16em;text-align:center;margin-bottom:16px}
+  .hero-product .detail .chips{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin:14px 0 20px}
+  .hero-product .detail .chip{padding:5px 12px;font-size:.72rem}
+  .hero-product .detail p{font-size:.92rem;text-align:center;line-height:1.65;margin-bottom:22px;padding:0 4px}
+  .hero-product .detail .btn{font-size:.88rem;padding:12px 22px;max-width:280px;width:100%;display:flex;justify-content:center;margin:0 auto}
+
+  .pricing{padding:10px 0 24px}
+  .pricing .pricing-card{padding:26px 20px;border-radius:14px}
+  .price-grid{gap:16px}
+  .price-card{padding:26px 22px 24px;border-radius:14px}
+  .price-card .pc-badge{font-size:.58rem;padding:3px 8px}
+  .pc-icon{width:48px;height:48px;border-radius:12px;margin-bottom:14px}
+  .pc-icon svg{width:24px;height:24px}
+  .price-card h3{font-size:1.4rem}
+  .price-card .sub{font-size:.66rem;margin-bottom:16px}
+  .pc-price .amount{font-size:2.2rem}
+  .pc-price .currency{font-size:1.3rem}
+  .pc-price .unit{font-size:.75rem}
+  .pc-note{font-size:.72rem;margin-bottom:18px}
+  .pc-list{gap:7px;padding-top:16px;margin-bottom:20px}
+  .pc-list li{font-size:.77rem;gap:7px}
+  .pc-list li svg{width:12px;height:12px}
+  .price-card .btn{font-size:.84rem;padding:11px 16px}
+  .pricing-foot{font-size:.75rem}
+
+  .pd{padding:30px 0 40px}
+  .pd .card{padding:24px 20px;margin-bottom:18px;border-radius:14px}
+  .pd .card.two{gap:20px}
+  .pd .card h3{font-size:1.3rem;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .pd .card p{font-size:.88rem;line-height:1.65}
+
+  .hl-list{gap:12px}
+  .hl-list li{font-size:.87rem;gap:12px;padding:7px 0;border-bottom:1px dashed rgba(227,224,210,.7);}
+  .hl-list li:last-child{border-bottom:0}
+  .hl-ico{width:30px;height:30px}
+  .hl-ico svg{width:16px;height:16px}
+
+  .ing-block{padding:18px 18px 16px;border-radius:12px}
+  .ing-block h4{font-size:1.1rem;margin-bottom:10px}
+  .ing-block .ing-en{font-size:.88rem}
+  .ing-block .ing-label{font-size:.58rem}
+  .ingredients-sub{font-size:.78rem;margin-bottom:14px}
+
+  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .thumbs img{width:100%;height:auto;aspect-ratio:1/1;border-radius:8px}
+
+  .consume{padding:16px 18px;gap:14px;border-radius:12px}
+  .consume .ico{width:40px;height:40px}
+  .consume .ico svg{width:24px;height:24px}
+  .consume strong{font-size:.88rem}
+  .consume span{font-size:.75rem;line-height:1.5}
+
+  .pd-gallery{padding:32px 20px 30px}
+  .gallery-head{margin-bottom:26px;padding-bottom:20px}
+  .gallery-head h3{font-size:1.4rem}
+  .gallery-head .eyebrow{font-size:.6rem;letter-spacing:.22em}
+  .gallery-head .gh-note{font-size:.8rem}
+
+  .gallery-grid{
+    grid-template-columns:repeat(2, 1fr);
+    grid-auto-rows:150px;
+    gap:12px;
+  }
+  .g-tile{border-radius:12px}
+  .g-tile.g-feature{grid-column:span 2;grid-row:span 1}
+  .g-tile.g-wide{grid-column:span 2;grid-row:span 1}
+  .g-tile.g-std{grid-column:span 1;grid-row:span 1}
+
+  .g-tile .g-num{font-size:.7rem;top:12px;left:12px}
+  .g-tile .g-cap{font-size:.85rem;left:14px;bottom:12px;opacity:1;transform:none}
+  .g-tile .g-sub{opacity:1;transform:none;left:14px;bottom:28px;font-size:.6rem}
+  .g-tile .g-ring{width:26px;height:26px;top:12px;right:12px;opacity:1;transform:none}
+  .g-tile .g-ring svg{width:12px;height:12px}
+
+  .g-video .play{width:58px;height:58px}
+  .g-video .play svg{width:22px;height:22px}
+  .g-video .vlabel{font-size:.52rem;padding:4px 9px 3px;letter-spacing:.18em;top:12px;right:12px}
+
+  .enquiry{padding:30px 0 50px}
+  .enquiry .card{padding:32px 22px;border-radius:14px;}
+  .enquiry h2{font-size:1.4rem;line-height:1.25;}
+  .enquiry p{font-size:.88rem;margin:10px 0 20px}
+  .enq-actions{flex-direction:column;gap:10px;}
+  .enq-actions .btn{width:100%;justify-content:center;padding:12px 20px;font-size:.88rem;}
+
+  .site-footer{padding:50px 0 0}
+  .foot-grid{grid-template-columns:1fr;gap:32px;margin-bottom:32px;}
+  .foot-brand .logo{font-size:1.3rem}
+  .foot-brand .logo img{height:38px}
+  .foot-brand p{font-size:.86rem;line-height:1.65}
+  .foot-social a{width:38px;height:38px}
+  .foot-social svg{width:17px;height:17px}
+
+  .site-footer h4{font-size:.75rem;margin-bottom:14px;padding-bottom:8px;}
+  .site-footer ul{gap:8px}
+  .site-footer li a{font-size:.86rem}
+  .foot-contact li{font-size:.85rem;margin-bottom:12px}
+  .foot-contact li svg{width:16px;height:16px;margin-top:3px}
+  .foot-contact strong{font-size:.72rem}
+
+  .foot-bottom{padding:20px 0;font-size:.75rem;gap:12px;}
+  .foot-bottom .legal-links{gap:14px;justify-content:center;}
+  .foot-bottom .legal-links li a{font-size:.75rem}
+
+  .wa-float{width:52px;height:52px;right:16px;bottom:16px;}
+  .wa-float svg{width:26px;height:26px}
+
+  .lightbox{padding:10px}
+  .lightbox img,
+  .lightbox video{max-width:98vw;max-height:94vh;border-radius:8px}
+  .lightbox button{top:12px;right:12px;width:40px;height:40px;font-size:1.3rem}
+}
+
+@media (max-width:380px){
+  .hero-product .detail h1{font-size:1.75rem}
+  .hero-product .detail .chip{font-size:.68rem;padding:4px 10px}
+  .pc-price .amount{font-size:2rem}
+  .price-card h3{font-size:1.25rem}
+  .pd .card h3{font-size:1.15rem}
+  .gallery-head h3{font-size:1.2rem}
+  .enquiry h2{font-size:1.2rem}
+  .thumbs{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="logo" href="index.html" aria-label="Prajan Herbals home"><img src="prajan-img/logo.webp" alt="Prajan Herbals logo" onerror="this.style.display='none'">Prajan Herbals</a>
+<button class="menu-btn" aria-label="Menu" aria-expanded="false">&#9776;</button>
+<ul class="nav-links"><li><a class="link" href="index.html">Home</a></li><li><a class="link" href="about.html">About</a></li><li class="has-drop"><a class="link active" href="products.html">Products <small>&#9662;</small></a><ul class="dropdown"><li><a href="g2l.html">G2L</a></li><li><a href="amla-juice.html">Amla Juice</a></li><li><a href="noni-juice.html">Noni Juice</a></li></ul></li><li><a class="link" href="gallery.html">Gallery</a></li><li><a class="link" href="contact.html">Contact</a></li></ul></div></header>
+
+<!-- ========== PRODUCT HERO ========== -->
+<section class="hero-product">
+  <div class="container">
+    <div class="card hero-card reveal">
+      <div class="detail">
+        <div class="hero-img">
+          <img src="prajan-img/noni.webp" alt="Noni Juice pack" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <h1>Noni Juice</h1>
+          <span class="tag">NATURAL NONI WELLNESS</span>
+          <div class="chips">
+            <span class="chip">Boosts Immunity</span>
+            <span class="chip">Energy &amp; Vitality</span>
+            <span class="chip">Daily Wellness</span>
+          </div>
+          <p>Nature's goodness in every sip — cold-pressed from sun-ripened noni fruit for your daily wellness ritual.</p>
+          <a class="btn btn-primary"
+             href="https://wa.me/919894095956?text=Hello%20Prajan%20Herbals%2C%20I%20want%20to%20know%20more%20about%20Noni%20Juice"
+             target="_blank" rel="noopener">Enquire on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section class="pricing">
+  <div class="container">
+    <div class="card pricing-card reveal">
+
+      <div class="section-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>Retail &amp; Wholesale</h2>
+        <p>Two flexible pricing tiers designed for individual buyers and business partners. Wholesale rates apply on bulk orders.</p>
+      </div>
+
+      <div class="price-grid">
+
+        <div class="price-card retail">
+          <span class="pc-badge">Retail</span>
+          <div class="pc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 9l1.5-5h15L21 9"/>
+              <path d="M3 9h18v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z"/>
+              <path d="M8 13a2 2 0 0 0 4 0"/>
+            </svg>
+          </div>
+          <h3>Retail Price</h3>
+          <span class="sub">For Individual Buyers</span>
+
+          <div class="pc-price">
+            <span class="currency">₹</span>
+            <span class="amount">600</span>
+            <span class="unit">/ bottle</span>
+          </div>
+          <p class="pc-note">400 ml bottle &middot; <strong>MRP inclusive of all taxes</strong></p>
+
+          <ul class="pc-list">
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Available in 400 ml </li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Order as few as 1 bottle</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Standard MRP pricing</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Order via WhatsApp or call</li>
+          </ul>
+
+          <a class="btn btn-primary"
+             href="https://wa.me/919894095956?text=Hello%20Prajan%20Herbals%2C%20I%20want%20to%20order%20Noni%20Juice%20at%20retail%20price."
+             target="_blank" rel="noopener">Order Retail</a>
+        </div>
+
+        <div class="price-card wholesale">
+          <span class="pc-badge">Wholesale</span>
+          <div class="pc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/>
+              <path d="M3 8l9 5 9-5"/>
+              <path d="M12 13v8"/>
+            </svg>
+          </div>
+          <h3>Wholesale Price</h3>
+          <span class="sub">For Shops &amp; Resellers</span>
+
+          <div class="pc-price">
+            <span class="currency">₹</span>
+            <span class="amount">500</span>
+            <span class="unit">/ bottle</span>
+          </div>
+          <p class="pc-note">500 ml bottle &middot; <strong>MOQ: 12 bottles</strong></p>
+
+          <ul class="pc-list">
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Discounted bulk pricing</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Ideal for retail shops</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Distributors &amp; resellers welcome</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Custom labelling available</li>
+          </ul>
+
+          <a class="btn btn-primary"
+             href="https://wa.me/919894095956?text=Hello%20Prajan%20Herbals%2C%20I%20am%20interested%20in%20wholesale%20pricing%20for%20Noni%20Juice."
+             target="_blank" rel="noopener">Enquire Wholesale</a>
+        </div>
+
+      </div>
+
+      <p class="pricing-foot">
+        Wholesale pricing is confirmed based on order quantity, packaging &amp; delivery location.
+        See our <a href="privacy-terms.html#part-c">MOQ details</a> for minimum order quantity.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCT DETAILS ========== -->
+<section class="pd">
+  <div class="container">
+
+    <div class="card two reveal">
+      <div>
+        <h3>Product Overview</h3>
+        <p>Noni Juice is made from natural noni fruit, bringing nature's goodness to your daily wellness. Harvested from pristine groves and cold-pressed to preserve its natural enzymes.</p>
+      </div>
+      <div>
+        <h3>Key Highlights</h3>
+        <ul class="hl-list">
+          <li><span class="hl-ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span>Boosts Immunity</li>
+          <li><span class="hl-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>Energy &amp; Vitality</li>
+          <li><span class="hl-ico"><svg viewBox="0 0 24 24"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg></span>Daily Wellness</li>
+          <li><span class="hl-ico"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4.9 12c.6.6 1.4 1 2.3 1.2l.6.1v2.7h4v-2.7l.6-.1c.9-.2 1.7-.6 2.3-1.2A7 7 0 0 0 12 2z"/></svg></span>Rich in Antioxidants</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card two reveal">
+      <div>
+        <h3>Ingredients / Product Information</h3>
+
+        <!-- ========== INGREDIENTS BLOCK ========== -->
+        <div class="ing-block">
+          <span class="ing-label">Ingredients</span>
+          <h4>Natural Noni Goodness</h4>
+
+          <div class="ing-en">
+            <strong>Pure Noni (Morinda Citrifolia) Juice</strong>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>How to Consume</h3>
+        <div class="consume">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 2h6v2h-1v2h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5V4H9zm2 8v3H8v2h3v3h2v-3h3v-2h-3v-3z"/></svg></div>
+          <div><strong>30ml empty stomach morning.</strong><span>Mix with water and consume daily for best results.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ============ PROFESSIONAL PRODUCT GALLERY =============== -->
+    <!-- ========================================================= -->
+    <div class="card pd-gallery reveal">
+      <div class="gallery-head">
+        <h3>Product Gallery</h3>
+        <div class="gh-note">Click any image or video to view</div>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="g-tile g-feature" data-type="image">
+          <img src="prajan-img/noni-poster-1.webp" alt="Noni Juice – featured"
+               loading="lazy" onerror="this.parentElement.style.display='none'">
+          <span class="g-num">01</span>
+          <span class="g-ring">
+            <svg viewBox="0 0 24 24"><path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/></svg>
+          </span>
+        </figure>
+
+        <figure class="g-tile g-std" data-type="image">
+          <img src="prajan-img/noni-poster-2.webp" alt="Noni Juice gallery 2"
+               loading="lazy" onerror="this.parentElement.style.display='none'">
+          <span class="g-num">02</span>
+          <span class="g-ring">
+            <svg viewBox="0 0 24 24"><path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/></svg>
+          </span>
+        </figure>
+
+        <figure class="g-tile g-std" data-type="image">
+          <img src="prajan-img/noni-poster-3.webp" alt="Noni Juice gallery 3"
+               loading="lazy" onerror="this.parentElement.style.display='none'">
+          <span class="g-num">03</span>
+          <span class="g-ring">
+            <svg viewBox="0 0 24 24"><path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/></svg>
+          </span>
+        </figure>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== ENQUIRY CTA ========== -->
+<section class="enquiry">
+  <div class="container">
+    <div class="card reveal">
+      <h2>Have a question about this product?</h2>
+      <p>Get in touch with Prajan Herbals.</p>
+      <div class="enq-actions">
+        <a class="btn btn-primary" href="https://wa.me/919894095956?text=Hello%20Prajan%20Herbals%2C%20I%20want%20to%20know%20more%20about%20Noni%20Juice" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm5.9 15.7c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.8 3.8 0 0 0-1.2 2.8 6.6 6.6 0 0 0 1.4 3.5 15 15 0 0 0 5.8 5.1c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.6 2.7 2.7 0 0 0 .2-1.6c-.1-.2-.3-.2-.6-.4z"/></svg>
+          WhatsApp Enquiry
+        </a>
+        <a class="btn btn-outline" href="tel:+919894095956">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.6 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="foot-grid">
+
+      <div class="foot-brand">
+        <a class="logo" href="index.html" aria-label="Prajan Herbals home">
+          <img src="prajan-img/logo.webp" alt="Prajan Herbals logo" onerror="this.style.display='none'">
+          Prajan Herbals
+        </a>
+        <p>Thoughtfully crafted herbal juices inspired by traditional Ayurvedic wellness and made for modern living — from Tiruppur, Tamil Nadu.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/prajan_herbal" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.7-.3.3-.6.7-.7 1.2-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.7 1.2.3.3.7.6 1.2.7.4.1 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.7.3-.3.6-.7.7-1.2.1-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.7-1.2-.3-.3-.7-.6-1.2-.7-.4-.1-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-3a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
+          </a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="g2l.html">G2L</a></li>
+          <li><a href="amla-juice.html">Amla Juice</a></li>
+          <li><a href="noni-juice.html">Noni Juice</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get In Touch</h4>
+        <ul class="foot-contact">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div>
+              <strong>Address</strong>
+              City Complex, 266, PN Rd,<br>Ramaiya Colony, Tiruppur,<br>Tamil Nadu 641602, India
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.6 3.6a1 1 0 0 1-.25 1z"/></svg>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+919894095956">+91 98940 95956</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <div>&copy; 2026 Prajan Herbals. All rights reserved.</div>
+      <ul class="legal-links">
+        <li><a href="privacy-terms.html">Privacy Policy &amp; Terms</a></li>
+        <li><a href="privacy-terms.html#part-c">MOQ</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919894095956?text=Hello%20Prajan%20Herbals%2C%20I%20want%20to%20know%20more%20about%20Noni%20Juice" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.8 1.2 1.2-3.7-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.8 3.8 0 0 0-1.2 2.8 6.6 6.6 0 0 0 1.4 3.5 15 15 0 0 0 5.8 5.1c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.6 2.7 2.7 0 0 0 .2-1.6c-.1-.2-.3-.2-.6-.4z"/></svg></a>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" role="dialog" aria-label="Media preview">
+  <button aria-label="Close">&times;</button>
+  <img alt="">
+  <video controls playsinline preload="auto" webkit-playsinline></video>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  // Mobile menu
+  const btn=document.querySelector('.menu-btn'),links=document.querySelector('.nav-links');
+  btn&&btn.addEventListener('click',()=>{links.classList.toggle('open');btn.setAttribute('aria-expanded',links.classList.contains('open'))});
+  document.querySelectorAll('.has-drop > a').forEach(a=>a.addEventListener('click',e=>{
+    if(window.innerWidth<=900){e.preventDefault();a.parentElement.classList.toggle('open')}}));
+
+  // Reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Lightbox
+  const lb = document.querySelector('.lightbox');
+  if(lb){
+    const bigImg = lb.querySelector('img');
+    const bigVid = lb.querySelector('video');
+
+    document.querySelectorAll('.gallery-grid [data-type="image"], .thumbs img').forEach(tile=>{
+      tile.addEventListener('click',()=>{
+        const img = tile.tagName === 'IMG' ? tile : tile.querySelector('img');
+        if(!img) return;
+        bigVid.pause();
+        bigVid.removeAttribute('src');
+        bigVid.load();
+        bigVid.hidden = true;
+        bigImg.hidden = false;
+        bigImg.src = img.src;
+        bigImg.alt = img.alt || '';
+        lb.classList.add('open');
+      });
+    });
+
+    document.querySelectorAll('.gallery-grid [data-type="video"]').forEach(tile=>{
+      tile.addEventListener('click',()=>{
+        const v = tile.querySelector('video');
+        if(!v) return;
+        const sourceEl = v.querySelector('source');
+        const src = (sourceEl && sourceEl.src) || v.src || v.currentSrc;
+        if(!src){ console.warn('No video source found.'); return; }
+        bigImg.hidden = true;
+        bigImg.removeAttribute('src');
+        bigVid.hidden = false;
+        bigVid.src = src;
+        lb.classList.add('open');
+        bigVid.load();
+        const p = bigVid.play();
+        if(p !== undefined){ p.catch(err => console.warn('Autoplay blocked:', err)); }
+      });
+    });
+
+    const closeLb = () => {
+      lb.classList.remove('open');
+      bigVid.pause();
+      bigVid.removeAttribute('src');
+      bigVid.load();
+      bigVid.hidden = true;
+      bigImg.removeAttribute('src');
+      bigImg.hidden = false;
+    };
+    lb.addEventListener('click', e=>{
+      if(e.target === lb || e.target.tagName === 'BUTTON') closeLb();
+    });
+    document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLb(); });
+  }
+});
+</script>
+</body>
+</html>

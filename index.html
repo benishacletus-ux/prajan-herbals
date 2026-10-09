@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prajan Herbals – Pure Herbal Wellness</title>
+  <meta name="description" content="Herbal juices inspired by traditional wellness, from Tiruppur, Tamil Nadu. Available for retail and wholesale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ----- RESET & GLOBAL ----- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins','Segoe UI',system-ui,sans-serif;color:#1d2a22;background:#faf8f1;line-height:1.65;overflow-x:hidden;animation:pageAppear 1s ease-out both}
+    @keyframes pageAppear{0%{opacity:0}100%{opacity:1}}
+    :root{--green:#1f5a3d;--green-dark:#154530;--leaf:#4f8a5b;--cream:#faf8f1;--sand:#f1ede0;--ink:#1d2a22;--muted:#6b7a70;--line:#e3e0d2;--wa:#25d366;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Poppins','Segoe UI',system-ui,sans-serif;--radius:18px;--shadow:0 12px 34px rgba(31,90,61,.12)}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,92%);margin:0 auto}
+    :focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+
+    /* ----- HEADER ----- */
+    .site-header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:50;
+      background:transparent;
+      border-bottom:1px solid transparent;
+      transition:background .35s ease, border-color .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+    }
+    .site-header.scrolled{
+      background:rgba(250,248,241,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 4px 20px rgba(0,0,0,.06);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:74px;position:relative}
+
+    .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.5rem;font-weight:700;color:#000;transition:color .35s ease;text-shadow:none;background:none;border:none;padding:0}
+    .site-header.scrolled .logo{color:#000;text-shadow:none}
+    .logo img{height:42px;width:auto;background:none;border:none;border-radius:0;padding:0}
+    .logo .fallback{display:grid;place-items:center;width:42px;height:42px;border-radius:0;background:none;color:#000;font-size:1rem;border:none}
+
+    .nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+    .nav-links>li{position:relative}
+    .nav-links a.link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;font-size:.92rem;font-weight:500;transition:.25s;color:#000;text-shadow:none;background:transparent;border:none}
+    .site-header.scrolled .nav-links a.link{color:#000;text-shadow:none}
+    .nav-links a.link:hover{background:rgba(0,0,0,.08)}
+    .site-header.scrolled .nav-links a.link:hover{background:var(--sand)}
+    .nav-links a.link.active{background:var(--green);color:#fff;text-shadow:none}
+    .site-header.scrolled .nav-links a.link.active{background:var(--green);color:#fff}
+
+    .nav-links a.link.glow{animation:productGlow 1.2s ease-out}
+    @keyframes productGlow{
+      0%{box-shadow:0 0 0 0 rgba(79,138,91,.7);background:rgba(79,138,91,.25)}
+      40%{box-shadow:0 0 22px 8px rgba(79,138,91,.65);background:rgba(79,138,91,.35)}
+      100%{box-shadow:0 0 0 0 rgba(79,138,91,0);background:transparent}
+    }
+
+    .dropdown{position:absolute;top:100%;left:0;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s;list-style:none}
+    .has-drop:hover .dropdown,.has-drop:focus-within .dropdown{opacity:1;visibility:visible;transform:none}
+    .dropdown a{display:block;padding:9px 14px;border-radius:10px;font-size:.9rem;color:var(--ink);text-shadow:none}
+    .dropdown a:hover{background:var(--sand);color:var(--green)}
+
+    .menu-btn{display:none;background:none;border:0;font-size:1.7rem;color:#000;cursor:pointer;text-shadow:none}
+    .site-header.scrolled .menu-btn{color:#000;text-shadow:none}
+
+    /* ----- HERO ----- */
+    .hero-fullscreen{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#1d2a22}
+    .hero-bg-picture{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+    .hero-bg-picture img{width:100%;height:100%;object-fit:cover;object-position:center;animation:heroAppear 1.4s ease-out both}
+    @keyframes heroAppear{0%{opacity:0}100%{opacity:1}}
+    .hero-content-full{position:relative;z-index:5;width:100%;max-width:100%;margin:0;padding:0 5vw;text-align:left;color:#000;animation:fadeUp 1.2s ease-out}
+    @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+    .hero-content-full h1{font-family:var(--serif);font-size:clamp(2.8rem,9vw,5.8rem);font-weight:700;line-height:1.05;color:#000;text-shadow:none;margin-bottom:.3em;letter-spacing:-.01em;max-width:14ch}
+    .hero-content-full .hero-tagline{font-family:var(--sans);font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:400;color:#000;max-width:680px;margin:0 0 2.2rem 0;text-shadow:none;letter-spacing:.01em}
+    .hero-actions-full{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-start}
+    .btn-hero{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border-radius:999px;font-weight:600;font-size:1.05rem;border:2px solid transparent;cursor:pointer;transition:all .3s ease;font-family:var(--sans);text-decoration:none;letter-spacing:.01em}
+    .btn-hero-primary{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 10px 28px rgba(0,0,0,.3)}
+    .btn-hero-primary:hover{background:var(--green-dark);border-color:var(--green-dark);transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.4)}
+    .btn-hero-outline{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#000;border-color:rgba(0,0,0,.8);text-shadow:none}
+    .btn-hero-outline:hover{background:#fff;color:var(--green-dark);border-color:#fff;transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+    .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:10;color:#000;font-size:.85rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2.4s infinite;letter-spacing:.2em;text-transform:uppercase;text-shadow:none}
+    .scroll-hint span{font-size:1.2rem}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+    /* ========================================================= */
+    /* ========== FEATURES STRIP ========== */
+    /* ========================================================= */
+    .features{
+      position:relative;
+      z-index:5;
+      margin-top:0;
+      padding:70px 0 60px;
+      background:var(--cream);
+    }
+    .features-card{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden
+    }
+    .feature{
+      padding:30px 16px;
+      text-align:center;
+      transition:.3s;
+      border-right:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      cursor:pointer
+    }
+    .feature:last-child{border-right:0}
+    .feature:hover{background:var(--sand)}
+    .feature .icon-wrap{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:rgba(79,138,91,.08);transition:transform .35s cubic-bezier(.2,.9,.3,1.2),background .3s}
+    .feature:hover .icon-wrap{transform:scale(1.35);background:rgba(79,138,91,.16)}
+    .feature svg{width:32px;height:32px;stroke:var(--green);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;fill:none;transition:stroke .3s}
+    .feature:hover svg{stroke:var(--green-dark)}
+    .feature span{font-size:.95rem;font-weight:600;color:var(--ink);letter-spacing:.01em;transition:color .3s}
+    .feature:hover span{color:var(--green-dark)}
+
+    /* ----- SECTIONS ----- */
+    section{padding:90px 0}
+    .section-title{text-align:center;margin-bottom:50px}
+    .section-title h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.15}
+    .section-title p{color:var(--muted);margin-top:8px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    
+    /* ----- FEATURED CARDS ----- */
+    .card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);text-align:center;transition:transform .35s ease, box-shadow .35s ease;position:relative}
+    .card:hover{transform:translateY(-8px);box-shadow:0 0 0 2px rgba(79,138,91,.5), 0 0 28px 6px rgba(79,138,91,.55), 0 18px 40px rgba(31,90,61,.25);animation:cardPulse 2s ease-in-out infinite}
+    @keyframes cardPulse{
+      0%,100%{box-shadow:0 0 0 2px rgba(79,138,91,.45), 0 0 22px 4px rgba(79,138,91,.45), 0 18px 40px rgba(31,90,61,.22)}
+      50%{box-shadow:0 0 0 2px rgba(79,138,91,.65), 0 0 34px 10px rgba(79,138,91,.65), 0 18px 40px rgba(31,90,61,.28)}
+    }
+    .card .img{aspect-ratio:4/4.3;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#dfead3,#f3efdc);margin-bottom:18px}
+    .card .img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+    .card:hover .img img{transform:scale(1.05)}
+    .card h3{font-family:var(--serif);font-size:1.8rem;color:var(--green-dark)}
+    .card .tag{display:block;font-size:.74rem;letter-spacing:.12em;color:var(--leaf);font-weight:600;margin:2px 0 8px}
+    .card p{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+    .badge{position:absolute;top:30px;right:30px;z-index:2;width:62px;height:62px;border-radius:50%;background:#fff;border:1.5px solid var(--green);display:grid;place-items:center;text-align:center;font-size:.6rem;line-height:1.15;color:var(--green);font-weight:600}
+    .badge b{display:block;font-size:.8rem}
+    .range{background:var(--sand)}
+    
+    /* ----- G2L BANNER ----- */
+    .g2l-banner{padding:0;background:#1d2a22;position:relative;overflow:hidden;height:50vh;min-height:320px;max-height:600px}
+    .g2l-banner .wrap{position:relative;height:100%;display:flex;align-items:center}
+    .g2l-banner .bg-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .g2l-banner .txt{position:relative;z-index:2;max-width:480px;color:#000;padding:40px 0;text-shadow:none}
+    .g2l-banner small{font-family:var(--serif);font-size:1.8rem;font-weight:600;letter-spacing:.05em;color:#000;display:block}
+    .g2l-banner h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:10px;color:#000}
+    .g2l-banner p{font-size:.95rem;margin-bottom:26px;color:#000;max-width:420px}
+    
+    /* ----- PURE GOODNESS ----- */
+    .goodness{background:linear-gradient(180deg,#f4f8ec,#faf8f1)}
+    .goodness .container{width:min(1320px,94%)}
+    .pg-card{
+      border-radius:var(--radius);
+      padding:28px 22px 26px;
+      text-align:center;
+      transition:transform .35s ease, box-shadow .35s ease;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow)
+    }
+    .pg-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 0 2px rgba(192,192,192,.7), 0 0 26px 6px rgba(192,192,192,.75), 0 18px 42px rgba(0,0,0,.18);
+      animation:silverPulse 2s ease-in-out infinite
+    }
+    @keyframes silverPulse{
+      0%,100%{box-shadow:0 0 0 2px rgba(192,192,192,.6), 0 0 20px 4px rgba(192,192,192,.6), 0 18px 42px rgba(0,0,0,.16)}
+      50%{box-shadow:0 0 0 2px rgba(220,220,220,.9), 0 0 34px 10px rgba(192,192,192,.85), 0 18px 42px rgba(0,0,0,.2)}
+    }
+    .pg-card.pg-g2l{background:linear-gradient(160deg,#fff0f0 0%,#ffe0e0 100%)}
+    .pg-card.pg-amla{background:linear-gradient(160deg,#fffbe6 0%,#fff3c4 100%)}
+    .pg-card.pg-noni{background:linear-gradient(160deg,#eef9ee 0%,#d8f0d8 100%)}
+    .pg-card .leaf{
+      position:absolute;
+      width:60px;height:60px;
+      z-index:0;
+      opacity:.35;
+      pointer-events:none;
+      transition:opacity .35s ease, transform .5s ease
+    }
+    .pg-card:hover .leaf{opacity:.55;transform:rotate(-8deg) scale(1.08)}
+    .pg-card .leaf.leaf-tl{top:-10px;left:-10px}
+    .pg-card .leaf.leaf-br{bottom:-10px;right:-10px;transform:rotate(160deg)}
+    .pg-card:hover .leaf.leaf-br{transform:rotate(168deg) scale(1.08)}
+    .pg-g2l .leaf{fill:#c0392b;stroke:#8b1a1a;stroke-width:1}
+    .pg-amla .leaf{fill:#e0a800;stroke:#a87b00;stroke-width:1}
+    .pg-noni .leaf{fill:#2e7d32;stroke:#1b5e20;stroke-width:1}
+    .pg-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;position:relative;z-index:1}
+    .pg-top .pack{flex:1;overflow:hidden;border-radius:12px}
+    .pg-top .pack img{width:100%;max-height:300px;object-fit:contain;transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-origin:center center;will-change:transform}
+    .pg-top .pack:hover img{transform:scale(1.12) translateX(8px)}
+    .pg-side{display:flex;flex-direction:column;align-items:center;gap:14px;width:110px}
+    .pg-side .seal{width:66px;height:66px;border-radius:50%;border:1.5px solid var(--green);background:rgba(255,255,255,.7);display:grid;place-items:center;font-size:.65rem;line-height:1.1;color:var(--green);font-weight:600}
+    .pg-side .seal b{display:block;font-size:.9rem}
+    .pg-benefit{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.72rem;color:var(--muted)}
+    .pg-benefit svg{width:26px;height:26px;stroke:var(--green);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .pg-card h3{font-family:var(--serif);font-size:2rem;color:var(--green-dark);position:relative;z-index:1}
+    .pg-card .tag{display:block;font-size:.78rem;letter-spacing:.12em;color:var(--leaf);font-weight:600;margin:2px 0 10px;position:relative;z-index:1}
+    .pg-card p{color:var(--muted);font-size:.95rem;margin-bottom:20px;position:relative;z-index:1}
+    .pg-card .btn{position:relative;z-index:1}
+    
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .split h2{font-family:var(--serif);font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;margin-bottom:16px;color:var(--green-dark)}
+    .split p{color:var(--muted);margin-bottom:16px}
+    .split .pic{aspect-ratio:5/4;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,#dfead3,#f3efdc);box-shadow:var(--shadow)}
+    .split .pic img{width:100%;height:100%;object-fit:cover}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:999px;font-weight:600;font-size:.95rem;border:1.5px solid var(--green);cursor:pointer;transition:.25s;font-family:var(--sans);text-decoration:none;color:var(--green);background:transparent}
+    .btn-primary{background:var(--green);color:#fff}
+    .btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+    .btn-outline{background:rgba(255,255,255,.75);color:var(--green)}
+    .btn-outline:hover{background:var(--green);color:#fff}
+    .btn-sm{padding:11px 26px;font-size:.95rem}
+
+    /* ========================================================= */
+    /* ========== WHOLESALE & RETAIL SECTION ========== */
+    /* ========================================================= */
+    .wholesale{
+      position:relative;
+      padding:100px 0;
+      background:linear-gradient(160deg,#f4f8ec 0%,#e9f1de 50%,#dfead3 100%);
+      overflow:hidden;
+    }
+    .wholesale::before{
+      content:"";
+      position:absolute;
+      width:520px;height:520px;
+      top:-200px;right:-160px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(79,138,91,.15),transparent 70%);
+      pointer-events:none;
+    }
+    .wholesale::after{
+      content:"";
+      position:absolute;
+      width:420px;height:420px;
+      bottom:-200px;left:-140px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(31,90,61,.12),transparent 70%);
+      pointer-events:none;
+    }
+    .wholesale .container{position:relative;z-index:2}
+    .ws-eyebrow{
+      display:inline-block;
+      font-size:.78rem;
+      font-weight:600;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--green);
+      background:rgba(255,255,255,.75);
+      padding:7px 18px;
+      border-radius:999px;
+      margin-bottom:20px;
+      box-shadow:0 4px 14px rgba(31,90,61,.08);
+    }
+    .ws-head{
+      text-align:center;
+      max-width:680px;
+      margin:0 auto 56px;
+    }
+    .ws-head h2{
+      font-family:var(--serif);
+      font-size:clamp(2.2rem,4.5vw,3.4rem);
+      line-height:1.1;
+      color:var(--green-dark);
+      margin-bottom:14px;
+      letter-spacing:-.01em;
+    }
+    .ws-head p{
+      color:#3e5a48;
+      font-size:clamp(1rem,1.4vw,1.12rem);
+      line-height:1.7;
+    }
+    .ws-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      max-width:1000px;
+      margin:0 auto;
+    }
+    .ws-card{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:38px 34px 34px;
+      box-shadow:0 12px 40px rgba(31,90,61,.10);
+      position:relative;
+      overflow:hidden;
+      transition:transform .35s ease, box-shadow .35s ease;
+      border:1px solid rgba(31,90,61,.06);
+    }
+    .ws-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 52px rgba(31,90,61,.18);
+    }
+    .ws-card.ws-retail::before{
+      content:"";
+      position:absolute;
+      top:0;left:0;right:0;
+      height:5px;
+      background:linear-gradient(90deg,#4f8a5b,#1f5a3d);
+    }
+    .ws-card.ws-wholesale::before{
+      content:"";
+      position:absolute;
+      top:0;left:0;right:0;
+      height:5px;
+      background:linear-gradient(90deg,#c9a227,#8b6f1f);
+    }
+    .ws-icon{
+      width:62px;height:62px;
+      border-radius:16px;
+      display:grid;place-items:center;
+      margin-bottom:20px;
+      background:rgba(79,138,91,.10);
+    }
+    .ws-card.ws-wholesale .ws-icon{background:rgba(201,162,39,.14)}
+    .ws-icon svg{
+      width:32px;height:32px;
+      stroke:var(--green);
+      fill:none;
+      stroke-width:1.9;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .ws-card.ws-wholesale .ws-icon svg{stroke:#8b6f1f}
+    .ws-card h3{
+      font-family:var(--serif);
+      font-size:1.9rem;
+      color:var(--green-dark);
+      line-height:1.15;
+      margin-bottom:8px;
+    }
+    .ws-card .ws-sub{
+      display:block;
+      font-size:.74rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--leaf);
+      font-weight:600;
+      margin-bottom:20px;
+    }
+    .ws-card.ws-wholesale .ws-sub{color:#a8861f}
+    .ws-price{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      margin-bottom:22px;
+      padding-bottom:22px;
+      border-bottom:1px dashed var(--line);
+    }
+    .ws-price strong{
+      font-family:var(--serif);
+      font-size:2.4rem;
+      font-weight:700;
+      color:var(--green-dark);
+      line-height:1;
+    }
+    .ws-card.ws-wholesale .ws-price strong{color:#8b6f1f}
+    .ws-price span{
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .ws-list{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin-bottom:28px;
+    }
+    .ws-list li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      font-size:.92rem;
+      color:#3e4a42;
+      line-height:1.55;
+    }
+    .ws-list li svg{
+      width:18px;height:18px;
+      flex:none;
+      margin-top:3px;
+      stroke:var(--green);
+      stroke-width:2.4;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .ws-card.ws-wholesale .ws-list li svg{stroke:#8b6f1f}
+    .ws-card .btn{
+      width:100%;
+      justify-content:center;
+    }
+    .ws-card.ws-wholesale .btn-primary{
+      background:#8b6f1f;
+      border-color:#8b6f1f;
+    }
+    .ws-card.ws-wholesale .btn-primary:hover{
+      background:#6f5817;
+      border-color:#6f5817;
+    }
+    .ws-note{
+      max-width:1000px;
+      margin:40px auto 0;
+      background:rgba(255,255,255,.75);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(31,90,61,.10);
+      border-radius:14px;
+      padding:22px 28px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      box-shadow:0 8px 24px rgba(31,90,61,.06);
+    }
+    .ws-note svg{
+      width:26px;height:26px;
+      flex:none;
+      stroke:var(--green);
+      fill:none;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      margin-top:2px;
+    }
+    .ws-note p{
+      font-size:.92rem;
+      color:#3e5a48;
+      line-height:1.65;
+    }
+    .ws-note strong{color:var(--green-dark)}
+
+    /* ----- CTA BANNER ----- */
+    .cta-banner{position:relative;padding:100px 0;overflow:hidden;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .cta-banner .cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .cta-banner::before,.cta-banner::after{content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:1}
+    .cta-banner::before{width:340px;height:340px;top:-120px;left:-100px;background:radial-gradient(circle,rgba(79,138,91,.18),transparent 70%)}
+    .cta-banner::after{width:420px;height:420px;bottom:-180px;right:-120px;background:radial-gradient(circle,rgba(31,90,61,.16),transparent 70%)}
+    .cta-inner{position:relative;z-index:3;max-width:720px;margin:0 auto;padding:0 24px}
+    .cta-eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--green);background:rgba(255,255,255,.7);padding:7px 18px;border-radius:999px;margin-bottom:20px;box-shadow:0 4px 14px rgba(31,90,61,.08)}
+    .cta-inner h2{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;color:var(--green-dark);margin-bottom:14px;letter-spacing:-.01em}
+    .cta-inner p{color:#3e5a48;font-size:clamp(1rem,1.4vw,1.12rem);max-width:560px;margin:0 auto 32px;line-height:1.7}
+    .cta-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .cta-banner .btn-primary{box-shadow:0 12px 28px rgba(31,90,61,.28)}
+    .cta-banner .btn-primary:hover{box-shadow:0 16px 36px rgba(31,90,61,.4);transform:translateY(-3px)}
+    .cta-banner .btn-outline{background:#fff;color:var(--green);border-color:var(--green)}
+    .cta-banner .btn-outline:hover{background:var(--green);color:#fff;transform:translateY(-3px)}
+
+    /* ----- FOOTER ----- */
+    .site-footer{
+      background:linear-gradient(180deg,#154530 0%,#0e2b1f 100%);
+      color:#c9d9d0;
+      padding:70px 0 0;
+      position:relative;
+      overflow:hidden;
+    }
+    .site-footer::before{
+      content:"";
+      position:absolute;
+      width:520px;height:520px;
+      top:-260px;right:-180px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(79,138,91,.18),transparent 70%);
+      pointer-events:none;
+    }
+    .site-footer::after{
+      content:"";
+      position:absolute;
+      width:420px;height:420px;
+      bottom:-220px;left:-160px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(37,211,102,.10),transparent 70%);
+      pointer-events:none;
+    }
+    .site-footer .container{position:relative;z-index:2}
+    .foot-grid{
+      display:grid;
+      grid-template-columns:1.6fr 1fr 1fr 1.3fr;
+      gap:44px;
+      margin-bottom:48px;
+    }
+    .foot-brand .logo{
+      display:flex;align-items:center;gap:10px;
+      font-family:var(--serif);
+      font-size:1.55rem;
+      font-weight:700;
+      color:#fff;
+      margin-bottom:16px;
+      text-shadow:none;
+      background:none;border:none;padding:0;
+    }
+    /* NO filter — logo shows in original colors */
+    .foot-brand .logo img{
+      height:44px;
+      width:auto;
+      background:none;
+      border:none;
+      border-radius:0;
+      padding:0;
+      box-shadow:none;
+    }
+    .foot-brand .logo .fallback{
+      display:grid;place-items:center;
+      width:44px;height:44px;border-radius:10px;
+      background:rgba(255,255,255,.12);
+      color:#fff;font-size:1rem;
+    }
+    .foot-brand p{
+      color:#b3c7bc;
+      font-size:.92rem;
+      max-width:340px;
+      margin-bottom:20px;
+      line-height:1.7;
+    }
+    .foot-social{display:flex;gap:10px;flex-wrap:wrap}
+    .foot-social a{
+      width:40px;height:40px;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      display:grid;place-items:center;
+      transition:.3s;
+    }
+    .foot-social a:hover{
+      background:var(--green);
+      border-color:var(--green);
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(31,90,61,.4);
+    }
+    .foot-social svg{width:18px;height:18px;fill:#dce9e0;transition:fill .3s}
+    .foot-social a:hover svg{fill:#fff}
+    .site-footer h4{
+      font-family:var(--sans);
+      font-size:.82rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#fff;
+      margin-bottom:20px;
+      position:relative;
+      padding-bottom:10px;
+    }
+    .site-footer h4::after{
+      content:"";
+      position:absolute;
+      left:0;bottom:0;
+      width:32px;height:2px;
+      background:var(--leaf);
+      border-radius:2px;
+    }
+    .site-footer ul{list-style:none;display:grid;gap:10px}
+    .site-footer li a{
+      color:#b3c7bc;
+      font-size:.92rem;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:.25s;
+    }
+    .site-footer li a::before{
+      content:"";
+      width:6px;height:6px;
+      border-radius:50%;
+      background:var(--leaf);
+      opacity:.5;
+      transition:.25s;
+      flex:none;
+    }
+    .site-footer li a:hover{color:#fff;transform:translateX(3px)}
+    .site-footer li a:hover::before{
+      background:#25d366;
+      opacity:1;
+      box-shadow:0 0 8px rgba(37,211,102,.8);
+    }
+    .foot-contact li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:14px;
+      font-size:.9rem;
+      color:#b3c7bc;
+      line-height:1.6;
+    }
+    .foot-contact li svg{width:18px;height:18px;fill:var(--leaf);flex:none;margin-top:4px}
+    .foot-contact li a{color:#b3c7bc;display:inline;gap:0}
+    .foot-contact li a::before{content:none}
+    .foot-contact li a:hover{color:#fff;transform:none;text-decoration:underline}
+    .foot-contact strong{
+      color:#fff;
+      font-weight:600;
+      display:block;
+      margin-bottom:2px;
+      font-size:.8rem;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+    .foot-bottom{
+      border-top:1px solid rgba(255,255,255,.12);
+      padding:24px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:.82rem;
+      color:#9eb3a8;
+    }
+    .foot-bottom .legal-links{display:flex;gap:22px;flex-wrap:wrap;list-style:none}
+    .foot-bottom .legal-links li a{
+      color:#9eb3a8;
+      font-size:.82rem;
+      display:inline;
+      gap:0;
+    }
+    .foot-bottom .legal-links li a::before{content:none}
+    .foot-bottom .legal-links li a:hover{color:#fff;text-decoration:underline;transform:none}
+    .foot-made{display:inline-flex;align-items:center;gap:6px;color:#9eb3a8}
+    .foot-made svg{width:12px;height:12px;fill:#e74c3c}
+
+    .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 26px rgba(37,211,102,.45);transition:.3s}
+    .wa-float:hover{transform:scale(1.1)}
+    .wa-float svg{width:30px;height:30px;fill:#fff}
+    .lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:24px}
+    .lightbox.open{display:flex}
+    .lightbox img{max-height:90vh;max-width:92vw;border-radius:12px}
+    .lightbox button{position:absolute;top:18px;right:24px;background:none;border:0;color:#fff;font-size:2.2rem;cursor:pointer}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.card:hover{box-shadow:0 0 0 2px rgba(79,138,91,.5), 0 0 28px 6px rgba(79,138,91,.55), 0 18px 40px rgba(31,90,61,.25)}.pg-card:hover{box-shadow:0 0 0 2px rgba(192,192,192,.7), 0 0 26px 6px rgba(192,192,192,.75), 0 18px 42px rgba(0,0,0,.18)}.pg-top .pack:hover img{transform:none}.pg-card:hover .leaf{transform:none}}
+    @media (max-width:900px){
+      .grid-3,.split{grid-template-columns:1fr}
+      .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+
+      /* ================================================= */
+      /* FEATURES STRIP — STAYS 4 IN A ROW ON TABLET      */
+      /* ================================================= */
+      .features{padding:50px 0 40px}
+      .features-card{grid-template-columns:repeat(4,1fr)}
+      .feature{padding:24px 8px;gap:10px}
+      .feature .icon-wrap{width:48px;height:48px}
+      .feature svg{width:26px;height:26px}
+      .feature span{font-size:.82rem;line-height:1.25}
+
+      .menu-btn{display:block}
+      .nav-links{position:absolute;top:74px;left:-4%;right:-4%;background:var(--cream);flex-direction:column;align-items:stretch;padding:14px 4%;border-bottom:1px solid var(--line);display:none}
+      .nav-links.open{display:flex}
+      .nav-links a.link{color:var(--ink);text-shadow:none}
+      .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 14px;display:none}
+      .has-drop.open .dropdown{display:block}
+      .hero-fullscreen{min-height:100svh}
+      .hero-content-full{padding:0 8vw}
+      .hero-content-full h1{font-size:clamp(2.4rem,12vw,3.6rem)}
+      .hero-actions-full{flex-direction:column;align-items:flex-start;width:100%}
+      .btn-hero{width:100%;max-width:320px;justify-content:center;padding:15px 24px}
+      .scroll-hint{display:none}
+      .cta-banner{padding:70px 0}
+      .g2l-banner{height:60vh;min-height:280px;max-height:500px}
+      .g2l-banner .txt{max-width:85%;padding:30px 0}
+      .g2l-banner p{font-size:.9rem}
+      .goodness .container{width:min(1180px,92%)}
+      .pg-top .pack img{max-height:260px}
+      .foot-bottom{flex-direction:column;text-align:center}
+      .wholesale{padding:80px 0}
+      .ws-grid{grid-template-columns:1fr;gap:24px}
+      .ws-card{padding:32px 26px 28px}
+    }
+    @media (max-width:600px){
+      .foot-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:480px){
+      .hero-content-full{padding:0 6vw}
+      .hero-content-full .hero-tagline{font-size:1rem}
+
+      /* ================================================= */
+      /* FEATURES STRIP — STAYS 4 IN A ROW ON MOBILE      */
+      /* ================================================= */
+      .features{padding:32px 0 24px}
+      .features-card{grid-template-columns:repeat(4,1fr)}
+      .feature{padding:16px 5px;gap:7px;border-right:1px solid var(--line);border-bottom:0}
+      .feature:last-child{border-right:0}
+      .feature .icon-wrap{width:40px;height:40px}
+      .feature svg{width:20px;height:20px}
+      .feature span{font-size:.68rem;line-height:1.2}
+
+      .cta-actions .btn{width:100%;justify-content:center}
+      .hero-content-full h1{max-width:100%}
+      .g2l-banner{height:55vh;min-height:250px}
+      .g2l-banner .txt{max-width:100%}
+      .g2l-banner small{font-size:1.4rem}
+      .g2l-banner h2{font-size:1.8rem}
+      .pg-top .pack img{max-height:220px}
+      .pg-side{width:90px}
+      .pg-card .leaf{width:44px;height:44px}
+      .wholesale{padding:60px 0}
+      .ws-card{padding:28px 22px 24px}
+      .ws-card h3{font-size:1.6rem}
+      .ws-price strong{font-size:2rem}
+      .ws-note{padding:18px 20px;flex-direction:column;gap:12px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Prajan Herbals home">
+      <img src="prajan-img/logo.webp" alt="" onerror="this.outerHTML='<span class=&quot;fallback&quot;>PH</span>'">
+      Prajan Herbals
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a class="link active" href="index.html">Home</a></li>
+      <li><a class="link" href="about.html">About</a></li>
+      <li class="has-drop">
+        <a class="link" href="products.html" id="products-link">Products <small>&#9662;</small></a>
+        <ul class="dropdown">
+          <li><a href="g2l.html">G2L</a></li>
+          <li><a href="amla-juice.html">Amla Juice</a></li>
+          <li><a href="noni-juice.html">Noni Juice</a></li>
+        </ul>
+      </li>
+      <li><a class="link" href="gallery.html">Gallery</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero-fullscreen">
+  <picture class="hero-bg-picture">
+    <source media="(max-width: 900px)" srcset="prajan-img/hero.webp" type="image/webp">
+    <source media="(min-width: 901px)" srcset="prajan-img/hero.webp" type="image/webp">
+    <img src="prajan-img/hero.webp" alt="Fresh fruits and herbs" loading="eager">
+  </picture>
+  
+  <div class="hero-content-full">
+    <h1>Pure herbal wellness, 
+      <br>bottled</h1>
+    <p class="hero-tagline">Discover thoughtfully crafted herbal juices <br>inspired by traditional wellness and made for <br>modern living.</p>
+    <div class="hero-actions-full">
+      <a class="btn-hero btn-hero-primary" href="products.html">Explore Products &rarr;</a>
+      <a class="btn-hero btn-hero-outline" href="https://wa.me/919894095956" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>&darr;</span>scroll</div>
+</section>
+
+<!-- ========== FEATURES STRIP ========== -->
+<section class="features">
+  <div class="container">
+    <div class="features-card">
+      <div class="feature">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg></div>
+        <span>Natural Wellness</span>
+      </div>
+      <div class="feature">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 14c0-3 2-5 6-5 0 3-2 5-6 5z"/></svg></div>
+        <span>Herbal Ingredients</span>
+      </div>
+      <div class="feature">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <span>Quality Focused</span>
+      </div>
+      <div class="feature">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <span>Tiruppur, Tamil Nadu</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SPLIT / ABOUT ========== -->
+<section>
+  <div class="container split">
+    <div class="reveal">
+      <h2>Tradition you can taste</h2>
+      <p>Prajan Herbals makes herbal juices rooted in Ayurvedic wellness, using natural ingredients and a quality-first approach.</p>
+      <p>Every bottle is made in Tiruppur for everyday, daily wellness.</p>
+      <a class="btn btn-outline" href="about.html">About Us</a>
+    </div>
+    <div class="pic reveal">
+      <img src="prajan-img/about.webp" alt="Herbal ingredients" loading="lazy" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED RANGE ========== -->
+<section class="range">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Featured Wellness Range</h2>
+      <p>Pure. Natural. Powerful.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <div class="badge"><b>100%</b>Natural</div>
+        <div class="img"><img src="prajan-img/g2l.webp" alt="G2L pack" loading="lazy" onerror="this.style.display='none'"></div>
+        <h3>G2L</h3>
+        <span class="tag">HEALTHY WELLTHY</span>
+        <p>A natural blend for better wellness and vitality.</p>
+        <a class="btn btn-primary btn-sm" href="g2l.html">Explore G2L &rarr;</a>
+      </article>
+      <article class="card reveal">
+        <div class="badge"><b>100%</b>Natural</div>
+        <div class="img"><img src="prajan-img/amla.webp" alt="Amla Juice pack" loading="lazy" onerror="this.style.display='none'"></div>
+        <h3>Amla Juice</h3>
+        <span class="tag">PURE AMLA GOODNESS</span>
+        <p>Rich in natural goodness for your daily wellness.</p>
+        <a class="btn btn-primary btn-sm" href="amla-juice.html">Explore Amla Juice &rarr;</a>
+      </article>
+      <article class="card reveal">
+        <div class="badge"><b>100%</b>Natural</div>
+        <div class="img"><img src="prajan-img/noni.webp" alt="Noni Juice pack" loading="lazy" onerror="this.style.display='none'"></div>
+        <h3>Noni Juice</h3>
+        <span class="tag">NATURAL NONI WELLNESS</span>
+        <p>Nature's goodness in every sip.</p>
+        <a class="btn btn-primary btn-sm" href="noni-juice.html">Explore Noni Juice &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== G2L BANNER (with mobile-specific image) ========== -->
+<section class="g2l-banner">
+  <!-- Desktop background image -->
+  <img class="bg-image desktop-bg" src="prajan-img/g2l-banner.webp" alt="G2L herbal wellness" loading="lazy" onerror="this.style.display='none'">
+  <!-- Mobile-specific background image (hidden on desktop) -->
+  <img class="bg-image mobile-bg" src="prajan-img/g2l-banner-m.webp" alt="G2L herbal wellness mobile" loading="lazy" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="container">
+      <div class="txt reveal">
+        <small>G2L</small>
+        <h2>Healthy Wealthy</h2>
+        <p>An Ayurvedic-inspired wellness tonic presented for everyday herbal wellness.</p>
+        <a class="btn btn-primary" href="g2l.html">Explore G2L &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PURE GOODNESS FROM NATURE ========== -->
+<section class="goodness">
+  <div class="container">
+    <div class="section-title">
+      <h2>Pure Goodness From Nature</h2>
+    </div>
+    <div class="grid-3">
+
+      <article class="pg-card pg-g2l reveal">
+        <svg class="leaf leaf-tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg>
+        <svg class="leaf leaf-br" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg>
+        <div class="pg-top">
+          <div class="pack"><img src="prajan-img/g2l-pack.webp" alt="G2L pack" loading="lazy"></div>
+          <div class="pg-side">
+            <div class="seal"><span><b>100%</b>Natural</span></div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Boosts Immunity</div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Energy &amp; Vitality</div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/></svg>Daily Wellness</div>
+          </div>
+        </div>
+        <h3>G2L</h3>
+        <span class="tag">HEALTHY WELLTHY</span>
+        <p>Ayurvedic-inspired wellness tonic for everyday vitality.</p>
+        <a class="btn btn-primary btn-sm" href="g2l.html">Explore G2L &rarr;</a>
+      </article>
+
+      <article class="pg-card pg-amla reveal">
+        <svg class="leaf leaf-tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg>
+        <svg class="leaf leaf-br" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg>
+        <div class="pg-top">
+          <div class="pack"><img src="prajan-img/amla-pack.webp" alt="Amla Juice pack" loading="lazy"></div>
+          <div class="pg-side">
+            <div class="seal"><span><b>100%</b>Natural</span></div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Boosts Immunity</div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Energy &amp; Vitality</div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/></svg>Daily Wellness</div>
+          </div>
+        </div>
+        <h3>Amla Juice</h3>
+        <span class="tag">PURE AMLA GOODNESS</span>
+        <p>Rich in natural goodness for your daily wellness.</p>
+        <a class="btn btn-primary btn-sm" href="amla-juice.html">Explore Amla Juice &rarr;</a>
+      </article>
+
+      <article class="pg-card pg-noni reveal">
+        <svg class="leaf leaf-tl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg>
+        <svg class="leaf leaf-br" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 11-10"/></svg>
+        <div class="pg-top">
+          <div class="pack"><img src="prajan-img/noni-pack.webp" alt="Noni Juice pack" loading="lazy"></div>
+          <div class="pg-side">
+            <div class="seal"><span><b>100%</b>Natural</span></div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Boosts Immunity</div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Energy &amp; Vitality</div>
+            <div class="pg-benefit"><svg viewBox="0 0 24 24"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/></svg>Daily Wellness</div>
+          </div>
+        </div>
+        <h3>Noni Juice</h3>
+        <span class="tag">NATURAL NONI WELLNESS</span>
+        <p>Nature's goodness in every sip.</p>
+        <a class="btn btn-primary btn-sm" href="noni-juice.html">Explore Noni Juice &rarr;</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- ========== WHOLESALE & RETAIL SECTION ========== -->
+<!-- ========================================================= -->
+<section class="wholesale">
+  <div class="container">
+
+    <div class="ws-head">
+      <span class="ws-eyebrow">Retail &amp; Wholesale</span>
+      <h2>Buy the way that suits you</h2>
+      <p>Whether you're an individual looking for daily wellness or a business wanting to stock our herbal juices, we have a pricing option for you. Choose retail for personal orders, or wholesale for shops, distributors and wellness centres.</p>
+    </div>
+
+    <div class="ws-grid">
+
+      <!-- RETAIL CARD -->
+      <div class="ws-card ws-retail reveal">
+        <div class="ws-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 9l1.5-5h15L21 9"/>
+            <path d="M3 9h18v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z"/>
+            <path d="M8 13a2 2 0 0 0 4 0"/>
+          </svg>
+        </div>
+        <h3>Retail</h3>
+        <span class="ws-sub">For Individuals &amp; Home Use</span>
+
+        <div class="ws-price">
+          <strong>MRP</strong>
+          <span>per bottle · 400</span>
+        </div>
+
+        <ul class="ws-list">
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Order as few as 1 bottle</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Standard retail pricing (MRP)</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Perfect for personal daily use</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Order by phone, WhatsApp or in person</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Same fresh batches as wholesale</li>
+        </ul>
+
+        <a class="btn btn-primary" href="products.html">Shop Retail &rarr;</a>
+      </div>
+
+      <!-- WHOLESALE CARD -->
+      <div class="ws-card ws-wholesale reveal">
+        <div class="ws-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/>
+            <path d="M3 8l9 5 9-5"/>
+            <path d="M12 13v8"/>
+          </svg>
+        </div>
+        <h3>Wholesale</h3>
+        <span class="ws-sub">For Shops, Distributors &amp; Resellers</span>
+
+        <div class="ws-price">
+          <strong>Bulk Pricing</strong>
+          <span>per bottle · significant savings</span>
+        </div>
+
+        <ul class="ws-list">
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Special discounted bulk pricing</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>MOQ applies (see MOQ details)</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Ideal for retail shops &amp; resellers</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Custom labelling available on request</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Dedicated support for bulk orders</li>
+        </ul>
+
+        <a class="btn btn-primary" href="https://wa.me/919894095956?text=Hello%20Prajan%20Herbals%2C%20I%27m%20interested%20in%20wholesale%20pricing." target="_blank" rel="noopener">Enquire for Wholesale &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- Note strip -->
+    <div class="ws-note">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 8v5"/>
+        <path d="M12 16h.01"/>
+      </svg>
+      <p><strong>Please note:</strong> Wholesale pricing is different from retail MRP and is confirmed based on order quantity, packaging size and delivery location. For exact wholesale rates and the current Minimum Order Quantity, please <a href="privacy-terms.html#part-c" style="color:var(--green);font-weight:600;border-bottom:1px solid rgba(31,90,61,.3)">see our MOQ details</a> or reach out on WhatsApp — we'll be happy to share a tailored quote.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== CTA BANNER (with mobile-specific image) ========== -->
+<section class="cta-banner">
+  <!-- Desktop background image -->
+  <img class="cta-bg desktop-bg" src="prajan-img/cta-banner.webp" alt="Herbal wellness background" loading="lazy" onerror="this.style.display='none'">
+  <!-- Mobile-specific background image (hidden on desktop) -->
+  <img class="cta-bg mobile-bg" src="prajan-img/cta-banner-mobile.webp" alt="Herbal wellness background mobile" loading="lazy" onerror="this.style.display='none'">
+  <div class="cta-inner reveal">
+    <span class="cta-eyebrow">Ready When You Are</span>
+    <h2>Start your wellness journey today</h2>
+    <p>Have a question about our herbal juices or want to place a bulk order? Our team in Tiruppur is here to help you choose the right blend for your everyday wellness.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="contact.html">Get in Touch &rarr;</a>
+      <a class="btn btn-outline" href="https://wa.me/919894095956" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="foot-grid">
+
+      <div class="foot-brand">
+        <a class="logo" href="index.html" aria-label="Prajan Herbals home">
+          <img src="prajan-img/logo.webp" alt="" onerror="this.outerHTML='<span class=&quot;fallback&quot;>PH</span>'">
+          Prajan Herbals
+        </a>
+        <p>Thoughtfully crafted herbal juices inspired by traditional Ayurvedic wellness and made for modern living — from Tiruppur, Tamil Nadu.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/prajan_herbal" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.7-.3.3-.6.7-.7 1.2-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.7 1.2.3.3.7.6 1.2.7.4.1 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.7.3-.3.6-.7.7-1.2.1-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.7-1.2-.3-.3-.7-.6-1.2-.7-.4-.1-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-3a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg>
+          </a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="g2l.html">G2L</a></li>
+          <li><a href="amla-juice.html">Amla Juice</a></li>
+          <li><a href="noni-juice.html">Noni Juice</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get In Touch</h4>
+        <ul class="foot-contact">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div>
+              <strong>Address</strong>
+              City Complex, 266, PN Rd,<br>Ramaiya Colony, Tiruppur,<br>Tamil Nadu 641602, India
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.6 3.6a1 1 0 0 1-.25 1z"/></svg>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+919894095956">+91 98940 95956</a>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:hello@prajanherbals.com">hello@prajanherbals.com</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <div>&copy; 2026 Prajan Herbals. All rights reserved.</div>
+      <ul class="legal-links">
+        <li><a href="privacy-terms.html">Privacy Policy &amp; Terms</a></li>
+        <li><a href="privacy-terms.html#part-c">MOQ</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919894095956" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.8 1.2 1.2-3.7-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.8 3.8 0 0 0-1.2 2.8 6.6 6.6 0 0 0 1.4 3.5 15 15 0 0 0 5.8 5.1c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.6 2.7 2.7 0 0 0 .2-1.6c-.1-.2-.3-.2-.6-.4z"/>
+  </svg>
+</a>
+
+<div class="lightbox" role="dialog" aria-label="Image preview">
+  <button aria-label="Close">&times;</button>
+  <img alt="">
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.site-header');
+    const onScroll = () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const btn = document.querySelector('.menu-btn'), links = document.querySelector('.nav-links');
+    btn && btn.addEventListener('click', () => {
+      links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', links.classList.contains('open'));
+    });
+
+    document.querySelectorAll('.has-drop > a').forEach(a => a.addEventListener('click', e => {
+      if (window.innerWidth <= 900) { e.preventDefault(); a.parentElement.classList.toggle('open'); }
+    }));
+
+    const productsLink = document.getElementById('products-link');
+    if (productsLink) {
+      productsLink.addEventListener('click', () => {
+        productsLink.classList.remove('glow');
+        void productsLink.offsetWidth;
+        productsLink.classList.add('glow');
+        setTimeout(() => productsLink.classList.remove('glow'), 1200);
+      });
+    }
+
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const lb = document.querySelector('.lightbox');
+    if (lb) {
+      const big = lb.querySelector('img');
+      document.querySelectorAll('.g-item img, .gallery-strip img, .thumbs img').forEach(img => {
+        img.addEventListener('click', () => { big.src = img.src; lb.classList.add('open'); });
+      });
+      lb.addEventListener('click', e => { if (e.target !== big) lb.classList.remove('open'); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+    }
+
+    const f = document.getElementById('contact-form');
+    f && f.addEventListener('submit', e => {
+      e.preventDefault();
+      const d = new FormData(f);
+      const t = encodeURIComponent(`Hello Prajan Herbals,\nName: ${d.get('name')}\nPhone: ${d.get('phone')}\n${d.get('message')}`);
+      window.open(`https://wa.me/919894095956?text=${t}`, '_blank');
+    });
+  });
+</script>
+</body>
+</html>

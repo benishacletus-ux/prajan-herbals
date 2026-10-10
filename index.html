@@ -163,7 +163,7 @@
       justify-content:center;
       text-align:center;
       font-size:.62rem;
-      line-height:1;            /* tight */
+      line-height:1;
       color:var(--green);
       font-weight:600;
       letter-spacing:.02em;
@@ -173,23 +173,76 @@
       display:block;
       font-size:.92rem;
       font-weight:700;
-      line-height:1;            /* tight */
-      margin-bottom:0;          /* no gap */
+      line-height:1;
+      margin-bottom:0;
     }
 
     .range{background:var(--sand)}
     
-    /* ----- G2L BANNER ----- */
+    /* ========================================================= */
+    /* ========== G2L BANNER ========== */
+    /* ========================================================= */
     .g2l-banner{padding:0;background:#1d2a22;position:relative;overflow:hidden;height:50vh;min-height:320px;max-height:600px}
     .g2l-banner .wrap{position:relative;height:100%;display:flex;align-items:center;z-index:2}
     .g2l-banner .bg-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+
+    /* Soft dark overlay to help text pop — like the About page style */
+    .g2l-banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(90deg,
+        rgba(0,0,0,.55) 0%,
+        rgba(0,0,0,.35) 45%,
+        rgba(0,0,0,0) 100%);
+      pointer-events:none;
+    }
+
     /* Banner image switching: desktop shown by default, mobile hidden */
     .g2l-banner .mobile-bg,
     .cta-banner .mobile-bg{display:none}
-    .g2l-banner .txt{position:relative;z-index:2;max-width:480px;color:#000;padding:40px 0;text-shadow:none}
-    .g2l-banner small{font-family:var(--serif);font-size:1.8rem;font-weight:600;letter-spacing:.05em;color:#000;display:block}
-    .g2l-banner h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:10px;color:#000}
-    .g2l-banner p{font-size:.95rem;margin-bottom:26px;color:#000;max-width:420px}
+
+    .g2l-banner .txt{
+      position:relative;
+      z-index:2;
+      max-width:480px;
+      color:#fff;                     /* white text now */
+      padding:40px 0;
+      text-shadow:
+        0 2px 12px rgba(0,0,0,.75),   /* soft dark glow */
+        0 1px 3px  rgba(0,0,0,.9);    /* tight shadow for sharpness */
+    }
+    .g2l-banner small{
+      font-family:var(--serif);
+      font-size:1.8rem;
+      font-weight:600;
+      letter-spacing:.05em;
+      color:#fff;
+      display:block;
+      text-shadow:
+        0 2px 12px rgba(0,0,0,.75),
+        0 1px 3px  rgba(0,0,0,.9);
+    }
+    .g2l-banner h2{
+      font-family:var(--serif);
+      font-size:clamp(2rem,4.5vw,3.2rem);
+      line-height:1.1;
+      margin-bottom:10px;
+      color:#fff;
+      text-shadow:
+        0 2px 16px rgba(0,0,0,.8),
+        0 1px 3px  rgba(0,0,0,.95);
+    }
+    .g2l-banner p{
+      font-size:.95rem;
+      margin-bottom:26px;
+      color:rgba(255,255,255,.95);
+      max-width:420px;
+      text-shadow:
+        0 1px 10px rgba(0,0,0,.7),
+        0 1px 2px  rgba(0,0,0,.85);
+    }
     
     /* ----- PURE GOODNESS ----- */
     .goodness{background:linear-gradient(180deg,#f4f8ec,#faf8f1)}
@@ -723,6 +776,14 @@
       .cta-banner .desktop-bg{display:none}
       .g2l-banner .mobile-bg,
       .cta-banner .mobile-bg{display:block}
+
+      /* ----- On tablet, use a stronger full-width overlay for G2L banner ----- */
+      .g2l-banner::after{
+        background:linear-gradient(180deg,
+          rgba(0,0,0,.6) 0%,
+          rgba(0,0,0,.4) 50%,
+          rgba(0,0,0,.6) 100%);
+      }
     }
     @media (max-width:600px){
       .foot-grid{grid-template-columns:1fr}
@@ -795,13 +856,9 @@
 <!-- ========== HERO ========== -->
 <section class="hero-fullscreen">
   <picture class="hero-bg-picture">
-    <!-- Mobile: up to 600px -->
     <source media="(max-width: 600px)" srcset="prajan-img/mobile-real-hero.webp" type="image/webp">
-    <!-- Tablet: 601px to 900px -->
     <source media="(min-width: 601px) and (max-width: 900px)" srcset="prajan-img/tablet-real-hero.webp" type="image/webp">
-    <!-- Desktop: 901px and up -->
     <source media="(min-width: 901px)" srcset="prajan-img/real-hero.webp" type="image/webp">
-    <!-- Fallback for old browsers -->
     <img src="prajan-img/real-hero.webp" alt="Fresh fruits and herbs" loading="eager">
   </picture>
   
@@ -891,11 +948,9 @@
   </div>
 </section>
 
-<!-- ========== G2L BANNER (with mobile-specific image) ========== -->
+<!-- ========== G2L BANNER ========== -->
 <section class="g2l-banner">
-  <!-- Desktop background image -->
-  <img class="bg-image desktop-bg" src="prajan-img/real-g2l-banner.webpv" alt="G2L herbal wellness" loading="lazy" onerror="this.style.display='none'">
-  <!-- Mobile-specific background image (hidden on desktop) -->
+  <img class="bg-image desktop-bg" src="prajan-img/real-g2l-banner.webp" alt="G2L herbal wellness" loading="lazy" onerror="this.style.display='none'">
   <img class="bg-image mobile-bg" src="prajan-img/mobile-g2l-banner.webp" alt="G2L herbal wellness mobile" loading="lazy" onerror="this.style.display='none'">
   <div class="wrap">
     <div class="container">
@@ -1062,9 +1117,7 @@
 
 <!-- ========== CTA BANNER (with mobile-specific image) ========== -->
 <section class="cta-banner">
-  <!-- Desktop background image -->
   <img class="cta-bg desktop-bg" src="prajan-img/cta-banner.webp" alt="Herbal wellness background" loading="lazy" onerror="this.style.display='none'">
-  <!-- Mobile-specific background image (hidden on desktop) -->
   <img class="cta-bg mobile-bg" src="prajan-img/cta-banner-mobile.webp" alt="Herbal wellness background mobile" loading="lazy" onerror="this.style.display='none'">
   <div class="cta-inner reveal">
     <span class="cta-eyebrow">Ready When You Are</span>
